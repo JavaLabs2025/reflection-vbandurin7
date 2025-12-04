@@ -1,5 +1,8 @@
 package org.example.classes;
 
+import org.example.generator.Generatable;
+
+@Generatable
 public class Rectangle implements Shape {
     private double length;
     private double width;
@@ -17,5 +20,15 @@ public class Rectangle implements Shape {
     @Override
     public double getPerimeter() {
         return 2 * (length + width);
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "length=" + String.format("%.2f", length) +
+                ", width=" + String.format("%.2f", width) +
+                ", area=" + String.format("%.2f", getArea()) +
+                ", perimeter=" + String.format("%.2f", getPerimeter()) +
+                '}';
     }
 }

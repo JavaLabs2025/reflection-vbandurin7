@@ -1,5 +1,8 @@
 package org.example.classes;
 
+import org.example.generator.Generatable;
+
+@Generatable
 public class Product {
     private String name;
     private double price;
@@ -31,6 +34,14 @@ public class Product {
     }
 
     @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + String.format("%.2f", price) +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         return super.hashCode();
     }
@@ -38,11 +49,6 @@ public class Product {
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 
 }

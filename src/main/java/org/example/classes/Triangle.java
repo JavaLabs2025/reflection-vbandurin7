@@ -1,5 +1,8 @@
 package org.example.classes;
 
+import org.example.generator.Generatable;
+
+@Generatable
 public class Triangle implements Shape {
     private double sideA;
     private double sideB;
@@ -20,5 +23,16 @@ public class Triangle implements Shape {
     @Override
     public double getPerimeter() {
         return sideA + sideB + sideC;
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "sides=[" + String.format("%.2f", sideA) +
+                ", " + String.format("%.2f", sideB) +
+                ", " + String.format("%.2f", sideC) + "]" +
+                ", area=" + String.format("%.2f", getArea()) +
+                ", perimeter=" + String.format("%.2f", getPerimeter()) +
+                '}';
     }
 }
